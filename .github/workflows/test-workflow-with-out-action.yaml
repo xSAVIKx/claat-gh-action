@@ -1,0 +1,16 @@
+name: Test Workflow with our Action
+
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  run-action:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: xSAVIKx/claat-gh-action
+        id: claat
+        with:
+          args: "version"
+      # Use the output from the `hello` step
+      - name: Get the output version
+        run: echo "The version was ${{ steps.claat.outputs.out }}"
