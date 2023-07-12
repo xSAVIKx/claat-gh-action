@@ -1,4 +1,4 @@
-name: 'claat'
+name: 'claat-cli'
 description: 'Runs claat Google Codelab CLI'
 inputs:
     args:  # id of input
