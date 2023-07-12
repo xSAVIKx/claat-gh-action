@@ -1,0 +1,14 @@
+name: 'claat'
+description: 'Runs claat Google Codelab CLI'
+inputs:
+    args:  # id of input
+        description: 'claat CLI arguments'
+        required: true
+outputs:
+    output: # id of output
+        description: 'The command output'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.args }}
