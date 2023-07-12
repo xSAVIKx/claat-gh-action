@@ -17,7 +17,7 @@ The output of the `claat` CLI command.
 ## Example usage
 
 ```yaml
-uses: xSAVIKx/claat-gh-action
+uses: xSAVIKx/claat-gh-action@v0
 with:
     args: 'version'
 ```
