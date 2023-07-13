@@ -4,9 +4,7 @@ ENV CLAAT_VERSION "latest"
 ENV GOBIN /go_bin
 RUN go install github.com/googlecodelabs/tools/claat@$CLAAT_VERSION
 
-FROM scratch as runtime
+FROM alpine as runtime
 
 WORKDIR /
 COPY --from=build /go_bin/claat /claat
-
-ENTRYPOINT [ "/claat" ]

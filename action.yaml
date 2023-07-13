@@ -1,24 +1,24 @@
 name: "claat-cli"
 description: "Runs claat Google Codelab CLI"
 inputs:
-    format:
-        description: "export format"
-        required: false
-        default: "html"
-    environment:
-        description: "The destination environment of the export"
-        required: false
-        default: "web"
-    auth:
-        description: "The oAuth2 token"
-        required: true
-    source:
-        description: "The source content to be converted into a static website"
-        required: true
+  format:
+    description: "export format"
+    required: false
+    default: "html"
+  environment:
+    description: "The destination environment of the export"
+    required: false
+    default: "web"
+  auth:
+    description: "The oAuth2 token"
+    required: true
+  source:
+    description: "The source content to be converted into a static website"
+    required: true
 outputs:
-    output: # id of output
-        description: 'The command output'
+  output: # id of output
+    description: 'The command output'
 runs:
-    using: 'docker'
-    image: 'Dockerfile'
-    args: [ "export", "-f", "${{ inputs.format }}", "-e", "${{ inputs.environment }}", "-auth", "${{ inputs.auth }}", "${{ inputs.source }}"]
+  using: 'docker'
+  image: 'Dockerfile'
+  args: [ "/claat", "export", "-f", "${{ inputs.format }}", "-e", "${{ inputs.environment }}", "-auth", "${{ inputs.auth }}", "${{ inputs.source }}" ]
