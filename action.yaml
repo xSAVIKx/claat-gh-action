@@ -11,7 +11,8 @@ inputs:
     default: "web"
   auth:
     description: "The oAuth2 token"
-    required: true
+    required: false
+    default: ""
   source:
     description: "The source content to be converted into a static website"
     required: true
