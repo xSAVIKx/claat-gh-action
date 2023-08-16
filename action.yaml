@@ -15,10 +15,14 @@ inputs:
   source:
     description: "The source content to be converted into a static website"
     required: true
+  output:
+    description: "The output directory or `-` for stdout."
+    required: true
+    default: "."
 outputs:
   output: # id of output
     description: 'The command output'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args: [ "/claat", "export", "-f", "${{ inputs.format }}", "-e", "${{ inputs.environment }}", "-auth", "${{ inputs.auth }}", "${{ inputs.source }}" ]
+  args: [ "/claat", "export", "-f", "${{ inputs.format }}", "-e", "${{ inputs.environment }}", "-auth", "${{ inputs.auth }}", "-o", "${{ inputs.output }}", "${{ inputs.source }}" ]

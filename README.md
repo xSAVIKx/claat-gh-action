@@ -20,6 +20,10 @@ The environment for which the website is generated. E.g. `web`.
 
 The format of the generated content.
 
+## `output`
+
+The folder into which the output is generated
+
 ## Outputs
 
 ## `output`
@@ -35,4 +39,5 @@ with:
     environment: "web"
     auth: "your-oAuth2-token"
     source: "your-source"
+    output: "your-output-folder"
 ```
